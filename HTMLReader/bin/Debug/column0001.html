@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<title>プロ野球中継　パ・リーグＴＶ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="ja" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-script-type" content="text/javascript" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="robots" content="all" />
+<meta name="description" content="パ・リーグ主催の野球432試合をライブ動画で中継する「パ・リーグ TV」。レギュラーシーズン、交流戦、クライマックスシリーズといった野球のライブ映像のほか、ゲームハイライト、ヒーローインタビューなどパ・リーグの動画情報が満載です。" />
+<meta name="keywords" content="野球,動画,パ・リーグ" />
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="google-site-verification" content="" />
+<meta name="y_key" content="" />
+<link rel="shortcut icon" href="/pc/img/common/favicon.ico" />
+<link href="https://imgtv.pacificleague.jp/pc/css/init.css" rel="stylesheet" type="text/css" media="all" />
+<link href="https://imgtv.pacificleague.jp/pc/css/common.css" rel="stylesheet" type="text/css" media="all" />
+<link href="https://imgtv.pacificleague.jp/pc/css/ptv/common.css" rel="stylesheet" type="text/css" media="all" />
+<link href="https://imgtv.pacificleague.jp/pc/css/ptv/info.css" rel="stylesheet" type="text/css" media="all" />
+<script src="https://imgtv.pacificleague.jp/pc/plugin/jquery-1.3.2.min.js" type="text/javascript">
+</script>
+<link href="https://imgtv.pacificleague.jp/pc/plugin/jquery.megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script src="https://imgtv.pacificleague.jp/pc/plugin/jquery.megamenu.js" type="text/javascript">
+</script>
+
+<link href="https://imgtv.pacificleague.jp/pc/css/ptv/viewer.css" rel="stylesheet" type="text/css" media="all" />
+<script src="https://imgtv.pacificleague.jp/pc/js/swfobject.js" language="javascript"></script>
+<script type="text/javascript">
+$(function(){
+	setOperate();
+});
+function setOperate(){
+	setView();
+	var agent = navigator.userAgent;
+	if(agent.search(/iPhone/) != -1){
+		$("body").addClass("iphone"); //iPhoneには「body class="iphone"」追加
+		window.onorientationchange = setView;
+	}else if(agent.search(/iPad/) != -1){
+		$("body").addClass("ipad"); //iPadには「body class="ipad"」追加
+		window.onorientationchange = setView;
+	}else if(agent.search(/Android/) != -1){
+		$("body").addClass("android"); //Androidには「body class="android"」追加
+		window.onresize = setView;
+	}else{
+		$("body").addClass("other"); //上記以外には「body class="other"」追加
+		window.onorientationchange = setView;
+	}
+}
+function setView(){
+	var orientation = window.orientation;
+	if(orientation === 0){
+		$("body").addClass("portrait"); //画面が縦向きの場合は「body class="portrait"」追加
+		$("body").removeClass("landscape"); //画面が縦向きの場合は「body class="landscape"」削除
+	}else{
+		$("body").addClass("landscape"); //画面が横向きの場合は「body class="landscape"」追加
+		$("body").removeClass("portrait"); //画面が横向きの場合は「body class="portrait"」削除
+	}
+	
+}
+</script>
+
+<style type="text/css">
+        <!--
+        .bnr_special01{margin:20px auto 90px;width:644px;clear:both;}
+        .bnr_special01 ul{margin-left:-6px;}
+        .bnr_special01 ul li{float:left;margin-left:6px;}
+		.bnr_special01:before,.bnr_special01:after {content: " "; /* 1 */display: table; /* 2 */}
+		.bnr_special01:after {clear: both;}
+		.bnr_special01 {*zoom: 1;}
+		.iphone .noSp,
+		.android .noSp,
+		.ipad .noSp,
+		.other .noPc{
+			display:none;
+		}
+        -->
+</style>
+        
+<!--[if IE 6 ]>
+<script src="/pc/plugin/DD_belatedPNG.js">
+</script>
+<script type="text/javascript">
+$(function() {
+	DD_belatedPNG.fix('div, mainColumn');
+	DD_belatedPNG.fix('a, ptvBanner');
+	DD_belatedPNG.fix('img, teamIconSmall');
+	DD_belatedPNG.fix('a, buttonView');
+
+	DD_belatedPNG.fix('ul, tablePad');
+	DD_belatedPNG.fix('div, teamNameL');
+	DD_belatedPNG.fix('div, teamNameR');
+	DD_belatedPNG.fix('div, mapAlpha');
+	DD_belatedPNG.fix('div, gameMapSpace');
+
+	DD_belatedPNG.fix('div, pngBg');
+	DD_belatedPNG.fix('img, pngBg');
+	DD_belatedPNG.fix('span, pngBg');
+	DD_belatedPNG.fix('a, pngBg');
+	DD_belatedPNG.fix('input, pngBg');
+	DD_belatedPNG.fix('label, pngBg');
+	DD_belatedPNG.fix('li, pngBg');
+});
+</script>
+<link href="/pc/css/ptv/header_h2_ie6.css" rel="stylesheet" type="text/css" media="all" />
+<![endif]-->
+
+<!--[if gt IE 6]>
+<script type="text/javascript">
+$(function() {
+	$("ul#grand_menu li#menu_headline").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab01.png)");
+	});
+	$("ul#grand_menu li#menu_news").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab02.png)");
+	});
+	$("ul#grand_menu li#menu_ptv").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab03.png)");
+	});
+	$("ul#grand_menu li#menu_schedule").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab04.png)");
+	});
+	$("ul#grand_menu li#menu_score").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab05.png)");
+	});
+	$("ul#grand_menu li#menu_team").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab06.png)");
+	});
+	$("ul#grand_menu li#menu_league").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab07.png)");
+	});
+	$("ul#grand_menu li#menu_goods").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab08.png)");
+	});
+	$("ul#grand_menu li#menu_ticket").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab09.png)");
+	});
+	$("ul#grand_menu li#menu_fanclub").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab10.png)");
+	});
+
+	$("ul#grand_menu li#menu_headline, ul#grand_menu li#menu_news, ul#grand_menu li#menu_ptv, ul#grand_menu li#menu_schedule, ul#grand_menu li#menu_score, ul#grand_menu li#menu_team, ul#grand_menu li#menu_league, ul#grand_menu li#menu_goods, ul#grand_menu li#menu_ticket, ul#grand_menu li#menu_fanclub").mouseout(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab00.png)");
+	});
+});
+</script>
+<![endif]-->
+
+<![if !IE]>
+<script type="text/javascript">
+$(function() {
+	$("ul#grand_menu li#menu_headline").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab01.png)");
+	});
+	$("ul#grand_menu li#menu_news").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab02.png)");
+	});
+	$("ul#grand_menu li#menu_ptv").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab03.png)");
+	});
+	$("ul#grand_menu li#menu_schedule").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab04.png)");
+	});
+	$("ul#grand_menu li#menu_score").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab05.png)");
+	});
+	$("ul#grand_menu li#menu_team").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab06.png)");
+	});
+	$("ul#grand_menu li#menu_league").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab07.png)");
+	});
+	$("ul#grand_menu li#menu_goods").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab08.png)");
+	});
+	$("ul#grand_menu li#menu_ticket").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab09.png)");
+	});
+	$("ul#grand_menu li#menu_fanclub").mouseover(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab10.png)");
+	});
+
+	$("ul#grand_menu li#menu_headline, ul#grand_menu li#menu_news, ul#grand_menu li#menu_ptv, ul#grand_menu li#menu_schedule, ul#grand_menu li#menu_score, ul#grand_menu li#menu_team, ul#grand_menu li#menu_league, ul#grand_menu li#menu_goods, ul#grand_menu li#menu_ticket, ul#grand_menu li#menu_fanclub").mouseout(function(){
+		$("ul#grand_menu").css("background-image", "url(/pc/img/common/grand_menu_tab00.png)");
+	});
+});
+</script>
+<![endif]>
+
+<script type="text/javascript">
+$(function(){
+	$(".megamenu").megamenu(
+		"naviContents", {
+			width: "980px"
+	});
+});
+</script>
+
+<!-- google Analytics 開始-->
+
+<script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-28555438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+ 
+<!-- google Analytics 終了-->
+
+
+
+</head>
+<body>
+
+<div id="header_container">
+
+<div id="header">
+
+    <h1>パ・リーグ 動画</h1>
+    <h2>パ・リーグTVでパ・リーグ主催全試合のプロ野球ライブ動画を完全中継！</h2>
+
+    <a href="http://www.pacificleague.jp/" id="logo"></a>
+	    
+    <div id="headBtn">
+      <a href="/" id="logo_ptv"></a>
+      <span id="txtPtvLive"></span>
+      <a href="/info/pc/service.html" id="btnAboutPtv"></a>
+    </div><!-- /headBtn -->
+
+    <a href="#" id="loginHead"></a>
+
+  <ul class="megamenu" id="grand_menu">
+   <li id="menu_headline">
+    <a href="javascript:void(0);" id="menu_headline"><span>試合速報</span></a>
+    <div class="grand_menu_drop">
+     <h3 class="title_contents"><img src="https://tv.pacificleague.jp/pc/img/common/drop_gamelive.png" alt="" /></h3>
+     <table class="menu_contents">
+      <tr>
+       <td>
+        <ul class="menu_list">
+         <li><a href="http://www.pacificleague.jp/game/">本日の試合一覧</a></li>
+        </ul>
+       </td>
+      </tr>
+     </table><!-- /menu_contents -->
+     <div class="banner_contents"><a href="https://tv.pacificleague.jp/"><img src="https://imgtv.pacificleague.jp/img/common/bnr_drop_ptv.jpg" alt="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" title="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" /></a></div>
+    </div><!-- /grand_menu_drop -->
+   </li>
+   <li id="menu_news">
+    <a href="javascript:void(0);" id="menu_news"><span>ニュース</span></a>
+    <div class="grand_menu_drop">
+     <h3 class="title_contents"><img src="https://tv.pacificleague.jp/pc/img/common/drop_news.png" alt="" /></h3>
+     <table class="menu_contents">
+      <tr>
+       <td>
+        <ul class="menu_list">
+         <li class="top">ニュース</li>
+         <li class="bottom"><a href="http://www.pacificleague.jp/news/list/">ニュース</a></li>
+        </ul>
+        <ul class="menu_list">
+         <li class="top">予告先発投手</li>
+         <li><a href="http://www.pacificleague.jp/news/pitchernotice/">最新情報</a></li>
+         <li><a href="http://www.pacificleague.jp/news/pitchernotice/list/">過去の履歴</a></li>
+        </ul>
+       </td>
+       <td>
+        <ul class="menu_list">
+         <li class="top">公示</li>
+         <li><a href="http://www.pacificleague.jp/news/announce/entry/">出場選手登録・抹消情報</a></li>
+         <li><a href="http://www.pacificleague.jp/news/announce/player/">出場選手一覧</a></li>
+         <li><a href="http://www.pacificleague.jp/news/announce/regist/">支配下選手登録・抹消情報</a></li>
+         <li><a href="http://www.pacificleague.jp/news/announce/retire/">任意引退・自由契約</a></li>
+        </ul>
+       </td>
+<!--
+       <td>
+        <ul class="menu_list">
+         <li class="top">表彰</li>
+         <li><a href="http://www.pacificleague.jp/news/awardMVP.html">MVP</a></li>
+         <li><a href="http://www.pacificleague.jp/news/awardeBestNine.html">ベストナイン</a></li>
+         <li><a href="http://www.pacificleague.jp/news/awardRecord.html">記録表彰</a></li>
+         <li><a href="http://www.pacificleague.jp/news/awardMonthlyMVP.html">日本生命月間MVP</a></li>
+        </ul>
+       </td>
+-->
+      </tr>
+     </table><!-- /menu_contents -->
+     <div class="banner_contents"><a href="https://tv.pacificleague.jp/"><img src="https://imgtv.pacificleague.jp/img/common/bnr_drop_ptv.jpg" alt="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" title="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" /></a></div>
+    </div><!-- /grand_menu_drop -->
+   </li>
+   <li id="menu_ptv">
+    <a href="javascript:void(0);" id="menu_ptv"><span>パ・リーグTV</span></a>
+    <div class="grand_menu_drop">
+     <h3 class="title_contents"><img src="https://tv.pacificleague.jp/pc/img/common/drop_ptv.png" alt="" /></h3>
+     <table class="menu_contents">
+      <tr>
+       <td>
+        <ul class="menu_list">
+         <li><a href="https://tv.pacificleague.jp/">パ・リーグTVトップ</a></li>
+         <li><a href="https://tv.pacificleague.jp/info/pc/service.html">サービス紹介</a></li>
+         <li><a href="https://tv.pacificleague.jp/ptv/help/">ヘルプ</a></li>
+        </ul>
+       </td>
+      </tr>
+     </table><!-- /menu_contents -->
+     <div class="banner_contents"><a href="https://tv.pacificleague.jp/"><img src="https://imgtv.pacificleague.jp/img/common/bnr_drop_ptv.jpg" alt="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" title="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" /></a></div>
+    </div><!-- /grand_menu_drop -->
+   </li>
+   <li id="menu_schedule">
+    <a href="javascript:void(0);" id="menu_schedule"><span>日程・結果</span></a>
+    <div class="grand_menu_drop">
+     <h3 class="title_contents"><img src="https://tv.pacificleague.jp/pc/img/common/drop_schedule.png" alt="" /></h3>
+     <table class="menu_contents">
+      <tr>
+       <td>
+        <ul class="menu_list">
+         <li><a href="http://www.pacificleague.jp/game/schedule/">試合日程・結果一覧</a></li>
+        </ul>
+       </td>
+      </tr>
+     </table><!-- /menu_contents -->
+     <div class="banner_contents"><a href="https://tv.pacificleague.jp/"><img src="https://imgtv.pacificleague.jp/img/common/bnr_drop_ptv.jpg" alt="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" title="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" /></a></div>
+    </div><!-- /grand_menu_drop -->
+   </li>
+   <li id="menu_score">
+    <a href="javascript:void(0);" id="menu_score"><span>成績</span></a>
+    <div class="grand_menu_drop">
+     <h3 class="title_contents"><img src="https://tv.pacificleague.jp/pc/img/common/drop_result.png" alt="" /></h3>
+     <table class="menu_contents">
+      <tr>
+       <td>
+        <ul class="menu_list">
+         <li><a href="http://www.pacificleague.jp/result/standing/">順位表・対戦成績</a></li>
+         <li><a href="http://www.pacificleague.jp/result/batting/">個人成績(打撃成績)</a></li>
+         <li><a href="http://www.pacificleague.jp/result/pitching/">個人成績(投手成績)</a></li>
+        </ul>
+       </td>
+      </tr>
+     </table><!-- /menu_contents -->
+     <div class="banner_contents"><a href="https://tv.pacificleague.jp/"><img src="https://imgtv.pacificleague.jp/img/common/bnr_drop_ptv.jpg" alt="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" title="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" /></a></div>
+    </div><!-- /grand_menu_drop -->
+   </li>
+   <li id="menu_team">
+    <a href="javascript:void(0);" id="menu_team"><span>チーム・選手</span></a>
+    <div class="grand_menu_drop">
+     <h3 class="title_contents"><img src="https://tv.pacificleague.jp/pc/img/common/drop_team.png" alt="" /></h3>
+     <table class="menu_contents">
+      <tr>
+       <td>
+        <ul class="menu_list">
+         <li><a href="http://www.pacificleague.jp/team/">チームトップ</a></li>
+         <li><a href="http://www.pacificleague.jp/team/player/">選手一覧</a></li>
+         <li><a href="http://www.pacificleague.jp/team/stadium/">スタジアム</a></li>
+        </ul>
+       </td>
+      </tr>
+     </table><!-- /menu_contents -->
+     <div class="banner_contents"><a href="https://tv.pacificleague.jp/"><img src="https://imgtv.pacificleague.jp/img/common/bnr_drop_ptv.jpg" alt="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" title="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" /></a></div>
+    </div><!-- /grand_menu_drop -->
+   </li>
+   <li id="menu_league">
+    <a href="javascript:void(0);" id="menu_league"><span>リーグ記録集</span></a>
+    <div class="grand_menu_drop">
+     <h3 class="title_contents"><img src="https://tv.pacificleague.jp/pc/img/common/drop_record.png" alt="" /></h3>
+     <table class="menu_contents">
+      <tr>
+       <td>
+        <ul class="menu_list">
+         <li>達成記録（準備中）<!--<a href="http://www.pacificleague.jp/records/achieve/">達成記録</a>--></li>
+         <li>達成候補記録（準備中）<!--<a href="http://www.pacificleague.jp/records/ccandidate/">達成候補記録</a>--></li>
+        </ul>
+       </td>
+      </tr>
+     </table><!-- /menu_contents -->
+     <div class="banner_contents"><a href="https://tv.pacificleague.jp/"><img src="https://imgtv.pacificleague.jp/img/common/bnr_drop_ptv.jpg" alt="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" title="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" /></a></div>
+    </div><!-- /grand_menu_drop -->
+   </li>
+   <li id="menu_goods">
+    <a href="javascript:void(0);" id="menu_goods"><span>グッズ</span></a>
+    <div class="grand_menu_drop">
+     <h3 class="title_contents"><img src="https://tv.pacificleague.jp/pc/img/common/drop_goods.png" alt="" /></h3>
+     <table class="menu_contents">
+      <tr>
+       <td>
+        <ul class="menu_list">
+         <li class="team SB"><a href="http://www.softbankhawks.co.jp/shopping/" target="_blank">福岡ソフトバンクホークス</a></li>
+         <li class="team F"> <a href="http://hokkaido.fighters.co.jp/shopping/top.php" target="_blank">北海道日本ハムファイターズ</a></li>
+         <li class="team L"> <a href="http://www.seibulions.jp/goods/" target="_blank">埼玉西武ライオンズ</a></li>
+         <li class="team Bs"><a href="http://www.buffaloes.co.jp/shopping/" target="_blank">オリックス・バファローズ</a></li>
+         <li class="team E"> <a href="http://www.rakuteneagles.jp/shopping/" target="_blank">東北楽天ゴールデンイーグルス</a></li>
+         <li class="team M"> <a href="http://www.marines.co.jp/shopping/" target="_blank">千葉ロッテマリーンズ</a></li>
+        </ul>                         
+       </td>
+       <td>
+        <ul class="menu_list">
+         <li class="link"><a href="http://www.rakuten.co.jp/plm-baseball/">パ・リーグ6球団公式グッズショップ</a></li>
+        </ul>
+       </td>
+      </tr>
+     </table><!-- /menu_contents -->
+    </div><!-- /grand_menu_drop -->
+   </li>
+   <li id="menu_ticket">
+    <a href="javascript:void(0);" id="menu_ticket"><span>チケット</span></a>
+    <div class="grand_menu_drop">
+     <h3 class="title_contents"><img src="https://tv.pacificleague.jp/pc/img/common/drop_ticket.png" alt="" /></h3>
+     <table class="menu_contents">
+      <tr>
+       <td>
+        <ul class="menu_list">
+         <li class="team SB"><a href="http://www.softbankhawks.co.jp/ticket/" target="_blank">福岡ソフトバンクホークス</a></li>
+         <li class="team F"><a href="http://www.fighters.co.jp/ticket/" target="_blank">北海道日本ハムファイターズ</a></li>
+         <li class="team L"><a href="http://www.seibulions.jp/ticket/" target="_blank">埼玉西武ライオンズ</a></li>
+         <li class="team Bs"><a href="http://www.buffaloes.co.jp/ticket/" target="_blank">オリックス・バファローズ</a></li>
+         <li class="team E"><a href="http://www.rakuteneagles.jp/ticket/" target="_blank">東北楽天ゴールデンイーグルス</a></li>
+         <li class="team M"><a href="http://www.marines.co.jp/ticket/" target="_blank">千葉ロッテマリーンズ</a></li>
+        </ul>
+       </td>
+      </tr>
+     </table><!-- /menu_contents -->
+     <div class="banner_contents"><a href="https://tv.pacificleague.jp/"><img src="https://imgtv.pacificleague.jp/img/common/bnr_drop_ptv.jpg" alt="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" title="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" /></a></div>
+    </div><!-- /grand_menu_drop -->
+   </li>
+   <li id="menu_fanclub">
+    <a href="javascript:void(0);" id="menu_fanclub"><span>ファンクラブ</span></a>
+    <div class="grand_menu_drop">
+     <h3 class="title_contents"><img src="https://tv.pacificleague.jp/pc/img/common/drop_fanclub.png" alt="" /></h3>
+     <table class="menu_contents">
+      <tr>
+       <td>
+        <ul class="menu_list">
+         <li class="team SB"><a href="http://www.softbankhawks.co.jp/fanclub/" target="_blank">福岡ソフトバンクホークス</a></li>
+         <li class="team F"><a href="http://hokkaido.fighters.co.jp/fanclub/" target="_blank">北海道日本ハムファイターズ</a></li>
+         <li class="team L"><a href="http://www.seibulions.jp/fanclub/index.php" target="_blank">埼玉西武ライオンズ</a></li>
+         <li class="team Bs"><a href="http://www.buffaloes.co.jp/fanclub/" target="_blank">オリックス・バファローズ</a></li>
+         <li class="team E"><a href="http://www.rakuteneagles.jp/fanclub/" target="_blank">東北楽天ゴールデンイーグルス</a></li>
+         <li class="team M"><a href="http://www.team26.jp/" target="_blank">千葉ロッテマリーンズ</a></li>
+        </ul>
+       </td>
+      </tr>
+     </table><!-- /menu_contents -->
+     <div class="banner_contents"><a href="https://tv.pacificleague.jp/"><img src="https://imgtv.pacificleague.jp/img/common/bnr_drop_ptv.jpg" alt="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" title="パ･リーグTVでパ･リーグ主催全試合のプロ野球ライブ動画を完全中継！" /></a></div>
+    </div><!-- /grand_menu_drop -->
+   </li>
+  </ul><!-- grand_menu -->
+
+	</div><!-- header -->
+
+
+
+</div><!-- header_container -->
+
+<div id="ptvNavigationContainer">
+	<div id="ptvNavigation">
+		<table>
+			<tr>
+				<td class="delim"></td>
+				<td>
+					<a href="/ptv"><span>パ・リーグTVトップ</span></a>
+				</td>
+				<td class="delim"></td>
+				<td>
+					<a href="/info/pc/service.html"><span>サービス紹介</span></a>
+				</td>
+				<td class="delim"></td>
+				<td>
+					<a href="/ptv/help"><span>ヘルプ</span></a>
+				</td>
+				<td class="delim"></td>
+			</tr>
+		</table>
+	</div><!-- ptvNavigation -->
+</div><!-- ptvNavigationContainer -->
+
+<div id="body_container">
+	<div id="body">
+
+
+<div id="infoMain">
+
+	<div id="infoFlow2">
+		<div class="freeSpace">      
+			<div id="" style="width:680px;height:460px;margin:0 auto;">
+			
+
+
+<!-- / iPhone iPad Android -->
+<div class="noPc">
+<a href="https://tv.pacificleague.jp/ptv/api/copyUrl/play?movieId=YuKvI3cdyHI"><img src="img/img_movie.jpg" alt="" title="" /></a>
+</div>
+<!-- / End of iPhone iPad Android -->
+
+
+<!-- / PC  -->
+
+<div class="noSp">
+<iframe src="https://tv.pacificleague.jp/ptv/api/copyUrl/play?movieId=YuKvI3cdyHI" frameborder="0" scrolling="no" width="680" height="460"></iframe>
+</div>
+
+			</div>
+           
+           <div class="bnr_special01">
+               <ul>
+                 <li><a href="http://special.pacificleague.jp/cs2012/index.php?utm_source=PTVFreeViewer&utm_medium=banner&utm_content=wide-480-113&utm_campaign=cs2012"><img src="img/bnr_cs2012.jpg" alt="" title="" /></a></li>
+                   <li><a href="https://tv.pacificleague.jp/"><img src="img/bnr_ptv.jpg" alt="" title="" /></a></li>
+               </ul>
+               
+           </div>
+           
+		
+            
+		</div>
+	</div>
+
+</div><!-- infoMain -->
+
+
+		<div id="to_page_link">
+			<a href="#"></a>
+		</div><!-- /to_page_link -->
+
+	</div><!-- /body -->
+</div><!-- /body_container -->
+
+<div id="footer_container">
+
+ <div id="footer">
+   <ul id="footerLink">
+      <li><a href="http://www.pacificleague.jp/information/terms/">＞ 利用規約</a></li>
+      <li><a href="http://www.pacificleague.jp/information/privacy/">＞ プライバシーポリシー</a></li>
+      <li><a href="http://www.pacificleague.jp/information/law/">＞ 特定商取引法の表示</a></li>
+      <li><a href="http://www.plm-baseball.co.jp/company/index.html" target="_blank">＞ 会社概要</a></li>
+      <li><a href="http://www.pacificleague.jp/inquiry/">＞ お問い合わせ</a></li>
+    </ul>
+  <table id="footerMenu">
+   <tr>
+    <td>
+     <dl class="menuList">
+      <dt><a href="http://www.pacificleague.jp/game/">試合速報</a></dt>
+      <dd><a href="http://www.pacificleague.jp/game/">本日の試合一覧</a></dd>
+     </dl>
+    </td>
+    <td>
+     <dl class="menuList">
+      <dt><a href="http://www.pacificleague.jp/news/list/">ニュース</a></dt>
+      <dd><a href="http://www.pacificleague.jp/news/list/">ニュース</a></dd>
+      <dd><a href="http://www.pacificleague.jp/news/pitchernotice/">予告先発投手</a></dd>
+      <dd class="inner"><a href="http://www.pacificleague.jp/news/pitchernotice/">・最新情報</a></dd>
+      <dd class="inner"><a href="http://www.pacificleague.jp/news/pitchernotice/list/">・過去の履歴</a></dd>
+      <dd><a href="http://www.pacificleague.jp/news/announce/entry/">公示</a></dd>
+      <dd class="inner"><a href="http://www.pacificleague.jp/news/announce/entry/">・出場選手登録・抹消情報</a></dd>
+      <dd class="inner"><a href="http://www.pacificleague.jp/news/announce/player/">・出場選手一覧</a></dd>
+      <dd class="inner"><a href="http://www.pacificleague.jp/news/announce/regist/">・支配下選手登録・抹消情報</a></dd>
+      <dd class="inner"><a href="http://www.pacificleague.jp/news/announce/retire/">・任意引退・自由契約</a></dd>
+<!--
+      <dd><a href="http://www.pacificleague.jp/news/awardMVP.html">表彰</a></dd>
+      <dd class="inner"><a href="http://www.pacificleague.jp/news/awardMVP.html">・MVP</a></dd>
+      <dd class="inner"><a href="http://www.pacificleague.jp/news/awardeBestNine.html">・ベストナイン</a></dd>
+      <dd class="inner"><a href="http://www.pacificleague.jp/news/awardRecord.html">・記録表彰</a></dd>
+      <dd class="inner"><a href="http://www.pacificleague.jp/news/awardMonthlyMVP.html">・日本生命月間MVP</a></dd>
+-->
+     </dl>
+    </td>
+    <td>
+     <dl class="menuList">
+      <dt><a href="https://tv.pacificleague.jp/">パ・リーグTV</a></dt>
+      <dd><a href="https://tv.pacificleague.jp/">パ・リーグTVトップ</a></dd>
+      <dd><a href="https://tv.pacificleague.jp/info/pc/service.html">サービス紹介</a></dd>
+      <dd><a href="https://tv.pacificleague.jp/ptv/help/">ヘルプ</a></dd>
+     </dl>
+     <dl class="menuList">
+      <dt><a href="http://www.pacificleague.jp/schedule/">日程・結果</a></dt>
+      <dd><a href="http://www.pacificleague.jp/schedule/">試合日程・結果一覧</a></dd>
+     </dl>
+     <dl class="menuList">
+      <dt><a href="http://www.pacificleague.jp/result/standing/">成績</a></dt>
+      <dd><a href="http://www.pacificleague.jp/result/standing/">順位表・対戦成績</a></dd>
+      <dd><a href="http://www.pacificleague.jp/result/batting/">個人成績(打撃成績)</a></dd>
+      <dd><a href="http://www.pacificleague.jp/result/pitching/">個人成績(投手成績)</a></dd>
+     </dl>
+    </td>
+    <td>
+     <dl class="menuList">
+      <dt><a href="http://www.pacificleague.jp/team/">チーム・選手</a></dt>
+      <dd><a href="http://www.pacificleague.jp/team/">チームトップ</a></dd>
+      <dd><a href="http://www.pacificleague.jp/team/player/">選手一覧</a></dd>
+      <dd><a href="http://www.pacificleague.jp/team/stadium/">スタジアム</a></dd>
+     </dl>
+     <dl class="menuList">
+      <dt>リーグ記録集（準備中）</dt>
+      <dd>達成記録（準備中）</dd>
+      <dd>達成候補記録（準備中）</dd>
+     </dl>
+    </td>
+    <td>
+     <dl class="menuList">
+      <dt class="icon02">
+       <a href="http://www.rakuten.co.jp/plm-baseball/" target="_blank">グッズ</a>
+       <table class="pulldown">
+        <tr>
+         <td><a href="http://www.rakuten.co.jp/plm-baseball/" target="_blank">パ・リーグ公式</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://www.softbankhawks.co.jp/shopping/" target="_blank">福岡ソフトバンク</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://hokkaido.fighters.co.jp/shopping/top.php" target="_blank">北海道日本ハム</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://www.seibulions.jp/goods/" target="_blank">埼玉西武</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://www.buffaloes.co.jp/shopping/" target="_blank">オリックス</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://www.rakuteneagles.jp/shopping/" target="_blank">楽天</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://www.marines.co.jp/shopping/" target="_blank">千葉ロッテ</a></td>
+        </tr>
+       </table><!-- /pulldown -->
+      </dt>
+      <dt class="icon02">
+       <a href="http://www.pacificleague.jp/ticket/index.jsp">チケット</a>
+       <table class="pulldown">
+        <tr>
+         <td><a href="http://www.softbankhawks.co.jp/ticket/" target="_blank">福岡ソフトバンク</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://www.fighters.co.jp/ticket/" target="_blank">北海道日本ハム</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://www.seibulions.jp/ticket/" target="_blank">埼玉西武</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://www.buffaloes.co.jp/ticket/" target="_blank">オリックス</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://www.rakuteneagles.jp/ticket/" target="_blank">楽天</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://www.marines.co.jp/ticket/" target="_blank">千葉ロッテ</a></td>
+        </tr>
+       </table><!-- /pulldown -->
+      </dt>
+      <dt class="icon02">
+       <a href="http://www.pacificleague.jp/">ファンクラブ</a>
+       <table class="pulldown">
+        <tr>
+         <td><a href="http://www.softbankhawks.co.jp/fanclub/" target="_blank">福岡ソフトバンク</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://hokkaido.fighters.co.jp/fanclub/" target="_blank">北海道日本ハム</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://www.seibulions.jp/fanclub/index.php" target="_blank">埼玉西武</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://www.buffaloes.co.jp/fanclub/" target="_blank">オリックス</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://www.rakuteneagles.jp/fanclub/" target="_blank">楽天</a></td>
+        </tr>
+        <tr>
+         <td><a href="http://www.team26.jp/" target="_blank">千葉ロッテ</a></td>
+        </tr>
+       </table><!-- /pulldown -->
+      </dt>
+     </dl>
+    </td>
+   </tr>
+  </table><!-- /footerMenu -->
+    <br clear="all" />
+
+	<div id="copyright">Copyright &copy; Pacific League Marketing All Rights Reserved.</div>
+
+ </div><!-- /footer -->
+
+
+</div><!-- /footer_container -->
+
+</body>
+</html>

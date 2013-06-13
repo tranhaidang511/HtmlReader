@@ -1,0 +1,9 @@
+c:\users\haidang\documents\visual studio 2012\Projects\HTMLReader\HTMLReader\bin\Debug\HTMLReader.exe.config
+C:\Users\HaiDang\documents\visual studio 2012\Projects\HTMLReader\HTMLReader\bin\Debug\HTMLReader.exe
+C:\Users\HaiDang\documents\visual studio 2012\Projects\HTMLReader\HTMLReader\bin\Debug\HTMLReader.pdb
+C:\Users\HaiDang\documents\visual studio 2012\Projects\HTMLReader\HTMLReader\obj\Debug\HTMLReader.csprojResolveAssemblyReference.cache
+C:\Users\HaiDang\documents\visual studio 2012\Projects\HTMLReader\HTMLReader\obj\Debug\HTMLReader.Properties.Resources.resources
+C:\Users\HaiDang\documents\visual studio 2012\Projects\HTMLReader\HTMLReader\obj\Debug\HTMLReader.csproj.GenerateResource.Cache
+C:\Users\HaiDang\documents\visual studio 2012\Projects\HTMLReader\HTMLReader\obj\Debug\HTMLReader.exe
+C:\Users\HaiDang\documents\visual studio 2012\Projects\HTMLReader\HTMLReader\obj\Debug\HTMLReader.pdb
+C:\Users\HaiDang\documents\visual studio 2012\Projects\HTMLReader\HTMLReader\obj\Debug\HTMLReader.Form1.resources
